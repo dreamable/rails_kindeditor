@@ -6,7 +6,7 @@ module RailsKindeditor
       input_html[:class] = "#{input_html[:class]} rails_kindeditor"
       output = ActiveSupport::SafeBuffer.new
       output << text_area_tag(name, content, input_html)
-      output << javascript_tag(js_replace(id, options))
+      output << javascript_tag(js_replace(input_html[:id], options))
     end
     
     def kindeditor(name, method, options = {})
